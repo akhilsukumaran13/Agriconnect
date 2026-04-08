@@ -1,0 +1,7 @@
+{
+  "name": "AgriConnect: Integrated Agri-Ecosystem",
+  "description": "A full-stack agricultural ecosystem managing the entire Input-Output cycle. Features include resource dispatch (seeds/fertilizers), farmer growth tracking, B2B forward contracting for hotels, and hyper-local farm-to-table delivery for neighbors.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

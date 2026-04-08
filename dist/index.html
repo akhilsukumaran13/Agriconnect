@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>AgriConnect - Direct Farm Marketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --emerald-glow: rgba(16, 185, 129, 0.06);
+      --earth-glow: rgba(217, 119, 6, 0.03);
+      --sky-glow: rgba(14, 165, 233, 0.03);
+      /* Mobile Safe Area Variables */
+      --safe-top: env(safe-area-inset-top);
+      --safe-bottom: env(safe-area-inset-bottom);
+    }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background-color: #f8fafc;
+      background-image: 
+        radial-gradient(circle at 0% 0%, var(--emerald-glow) 0, transparent 50%), 
+        radial-gradient(circle at 100% 0%, var(--sky-glow) 0, transparent 50%),
+        radial-gradient(circle at 100% 100%, var(--earth-glow) 0, transparent 50%),
+        radial-gradient(circle at 0% 100%, var(--emerald-glow) 0, transparent 50%);
+      background-attachment: fixed;
+      /* Prevent pull-to-refresh on mobile */
+      overscroll-behavior-y: none;
+      -webkit-tap-highlight-color: transparent;
+      padding-top: var(--safe-top);
+      padding-bottom: var(--safe-bottom);
+    }
+    h1, h2, h3 { font-family: 'Inter', sans-serif; font-weight: 800; }
+    .font-serif { font-family: 'Playfair Display', serif; }
+    
+    /* Smooth Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 20px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    }
+    
+    /* Custom Selection Color */
+    ::-moz-selection {
+      background-color: #059669;
+      color: white;
+    }
+    ::selection {
+      background-color: #059669;
+      color: white;
+    }
+    
+    /* Animation Utilities */
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/index-BYTklhdt.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D1oXrJWb.css">
+</head>
+<body class="text-slate-900 antialiased selection:bg-emerald-500 selection:text-white">
+  <div id="root"></div>
+</body>
+</html>
