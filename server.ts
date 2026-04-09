@@ -555,14 +555,20 @@ async function startServer() {
   // Initialize DB (non-blocking)
   initDB().catch(err => console.error("DB Init failed:", err));
 
+  const isProduction = process.env.NODE_ENV?.trim() === "production" || process.env.RENDER === "true";
+  console.log(`Environment check: NODE_ENV=${process.env.NODE_ENV}, isProduction=${isProduction}`);
+
   // Vite middleware for development
-  if (process.env.NODE_ENV !== "production") {
+  if (!isProduction) {
+    console.log("Starting Vite development server...");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
     });
     app.use(vite.middlewares);
+    console.log("Vite middleware attached.");
   } else {
+    console.log("Serving static files from dist...");
     app.use(express.static(path.join(__dirname, "dist")));
     app.get("*", (req, res) => {
       res.sendFile(path.join(__dirname, "dist", "index.html"));
@@ -570,8 +576,8 @@ async function startServer() {
   }
 
   console.log(`Attempting to bind to port ${PORT}...`);
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://0.0.0.0:${PORT}`);
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
     console.log(`Try health check at: /api/health`);
   });
 }
