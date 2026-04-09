@@ -570,7 +570,7 @@ async function startServer() {
   } else {
     console.log("Serving static files from dist...");
     app.use(express.static(path.join(__dirname, "dist")));
-    app.get("*", (req, res) => {
+    app.get("*all", (req, res) => {
       res.sendFile(path.join(__dirname, "dist", "index.html"));
     });
   }
